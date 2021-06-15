@@ -74,11 +74,12 @@ namespace FormalSpecification
 
         void handlePre(string pre)
         {
-            
+            pre = "!(" + pre + ")";
+            Console.WriteLine("new pre '{0}' .", pre);
         }
-
         void handlePost(string post)
         { 
+
         }
     }
 }
