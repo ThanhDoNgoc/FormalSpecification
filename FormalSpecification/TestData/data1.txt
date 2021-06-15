@@ -1,0 +1,3 @@
+Max2So(a:R,b:R)c:R
+pre 
+post ((c=a)&&(a>=b))||((c=b)&&(b>a))

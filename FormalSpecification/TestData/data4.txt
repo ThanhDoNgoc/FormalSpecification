@@ -1,0 +1,5 @@
+XepLoaiHS  (diem: R) xl: char*
+pre ( (diem>=0) && (diem <=10))
+post 
+((xl="XS") && (diem>=9)) || ((xl="Gioi") &&  (diem>=8) &&  (diem<9))
+     || ((xl="Kha") && (diem>=6.5) &&  (diem<8)) || ((xl="TB") &&  (diem>=5) &&  (diem<6.5))

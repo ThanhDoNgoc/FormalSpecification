@@ -1,0 +1,3 @@
+GiaiPhuongTrinhBac1(a:R,b:R)x:R
+pre a != 0
+post (x = -b/a)
