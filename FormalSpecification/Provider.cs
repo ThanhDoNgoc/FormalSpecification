@@ -7,21 +7,23 @@ using System.Text.RegularExpressions;
 
 namespace FormalSpecification
 {
-    class Provider
+    public class Provider
     {
 
-        string function = "";
-        string pre = "";
-        string post = "";
+        public string function = "";
+        public string pre = "";
+        public string post = "";
+        public string classname;
 
-        string function_name = "";
-        Dictionary<string, string> function_variable = new Dictionary<string, string>();
-        KeyValuePair<string, string> function_result;
+        public string function_name = "";
+        public Dictionary<string, string> function_variable = new Dictionary<string, string>();
+        public KeyValuePair<string, string> function_result;
 
-        Dictionary<string, string> post_condition = new Dictionary<string, string>();
+        public Dictionary<string, string> post_condition = new Dictionary<string, string>();
 
         public Provider(string class_name, string formal)
         {
+            classname = class_name;
             string formal1 = Regex.Replace(formal, @"\s+", string.Empty);
 
             Regex rxpre = new Regex(@"pre(.*?)post");
@@ -115,7 +117,7 @@ namespace FormalSpecification
             }
             else
             {
-                post_condition.Add(post, "");
+                post_condition.Add("post", post);
             }
         }
     }

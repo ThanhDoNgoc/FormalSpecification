@@ -1,0 +1,51 @@
+using System;
+namespace FormalSpecification
+{
+	public class @classname
+	{
+		public void Nhap_@functionname(@refvariable)
+		{
+@nhap_variable
+		}
+
+		public void Xuat_@functionname(@resulttype @resultkey)
+		{
+			Console.WriteLine("Ket qua la: {0} ", @resultkey);
+		}
+
+		public int KiemTra_@functionname(@strvariable)
+		{
+			@pre
+			return 1;
+		}
+
+		public @resulttype @functionname(@strvariable)
+		{
+			@resulttype @resultkey = 0;
+@condiction
+			return @resultkey;
+		}
+
+		public static void Main(string[] args)
+		{
+@main_variable
+			@resulttype @resultkey = @resultfirstvalue;
+
+			@classname p = new @classname();
+
+			p.Nhap_@functionname(@mainrefvariable);
+
+			if(p.KiemTra_@functionname(@mainstrvariable) == 1)
+			{
+				@resultkey = p.@functionname(@mainstrvariable);
+				p.Xuat_@functionname(@resultkey);
+			}
+			else
+			{			
+				Console.WriteLine("Thong tin nhap khong hop le");
+			}
+
+			Console.ReadLine();
+		}
+	}
+}

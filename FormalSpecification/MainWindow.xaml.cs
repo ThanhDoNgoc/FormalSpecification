@@ -42,7 +42,7 @@ namespace FormalSpecification
             InitNumberMargin(tbOutput);
             InitNumberMargin(tbInput);
             tbInput.Styles[ScintillaNET.Style.Cpp.Word2].ForeColor = System.Drawing.Color.Blue;
-            tbInput.SetKeywords(1, "R Z N def void Null ArgumentError arguments Array Boolean Class Date DefinitionError Error EvalError Function int Math Namespace Number Object RangeError ReferenceError RegExp SecurityError String SyntaxError TypeError uint XML XMLList Boolean Byte Char DateTime Decimal Double Int16 Int32 Int64 IntPtr SByte Single UInt16 UInt32 UInt64 UIntPtr Void Path System File Windows Forms ScintillaNET");
+            tbInput.SetKeywords(1, "R Z N B def void Null ArgumentError arguments Array Boolean Class Date DefinitionError Error EvalError Function int Math Namespace Number Object RangeError ReferenceError RegExp SecurityError String SyntaxError TypeError uint XML XMLList Boolean Byte Char DateTime Decimal Double Int16 Int32 Int64 IntPtr SByte Single UInt16 UInt32 UInt64 UIntPtr Void Path System File Windows Forms ScintillaNET");
         }
 
         private void New_Click(object sender, RoutedEventArgs e)
@@ -145,19 +145,40 @@ namespace FormalSpecification
             string str = tbInput.Text;
             str = Regex.Replace(str, @"\s+",string.Empty);
             tbOutput.Text = str;
+            tbOutput.Text = "abc\tdefgh";
             Match pre = Regex.Match(str, "pre");
             Match post = Regex.Match(str, "post");
 
             if (pre.Success && post.Success )
             {
-                tbOutput.Text = str ;
+                //tbOutput.Text = str ;
                 Provider provider = new Provider(str, tbInput.Text);
             }
         }
 
         private void btnCsharp_Click(object sender, RoutedEventArgs e)
         {
+            string str = tbInput.Text;
+            str = Regex.Replace(str, @"\s+", string.Empty);
+            Match pre = Regex.Match(str, "pre");
+            Match post = Regex.Match(str, "post");
 
+            if (pre.Success && post.Success)
+            {
+                Provider provider = new Provider(tbClass.Text, tbInput.Text);
+                CSharpTranslate cshap = new CSharpTranslate();
+                cshap.CSharp_transtale(provider);
+                tbOutput.Text = cshap.generateCSharpCode();
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Incorrect formal");
+            }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

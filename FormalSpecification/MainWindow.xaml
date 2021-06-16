@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:FormalSpecification"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Formal Specfication" Height="450" Width="800">
+        Title="Formal Specfication" Height="720" Width="1280">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
@@ -23,26 +23,27 @@
                     <MenuItem x:Name="New" Header="New" Click="New_Click" ></MenuItem>
                     <MenuItem x:Name="Open" Header="Open" Click="Open_Click" ></MenuItem>
                     <MenuItem x:Name="Save" Header="Save" Click="Save_Click"></MenuItem>
+                    <MenuItem x:Name="Exit" Header="Exit" Click="Exit_Click"></MenuItem>
                 </MenuItem>
             </Menu>
         </Grid>
         <Grid Grid.Row="1" Background="LightGray">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="880"></ColumnDefinition>
         </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Button x:Name="bntBuildSolution" Height="30" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="30, 42.5" BorderThickness="1" BorderBrush="Black">Build Solution</Button>
                 <Label Margin="23.5 30" Width="80" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Class Name</Label>
                 <Label Margin="23.5 55" Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Exe File Name</Label>
-                <TextBox Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130 35"> </TextBox>
+                <TextBox Name="tbClass" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130 35">Program</TextBox>
                 <TextBox Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130 60"></TextBox>
-                <sn:ScintillaWPF x:Name="tbInput" Width="350" Height="290" Margin="23.5,100,23.5,11" Foreground="White"></sn:ScintillaWPF>
+                <sn:ScintillaWPF x:Name="tbInput" Width="360" Height="500" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 20" Foreground="White"></sn:ScintillaWPF>
             </Grid>
         <Grid Grid.Column="1">
-                <Button x:Name="btnCplusplus" Click="btnCplusplus_Click" Width="60" Height="20" Margin="8.5,10,308.5,361" BorderThickness="1" BorderBrush="Black"> C++</Button>
-                <Button x:Name="btnCsharp" Click="btnCsharp_Click" Width="60" Height="20" Margin="100.5,10,216.5,361" BorderThickness="1" BorderBrush="Black">C#</Button>
-                <sn:ScintillaWPF x:Name="tbOutput" Width=" 380" Height="340" Margin="8.5,50,8.5,11"  Background="White"  IsEnabled="True"></sn:ScintillaWPF>
+                <Button x:Name="btnCplusplus" Click="btnCplusplus_Click" Width="60" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60 20" BorderThickness="1" BorderBrush="Black"> C++</Button>
+                <Button x:Name="btnCsharp" Click="btnCsharp_Click" Width="60" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140 20" BorderThickness="1" BorderBrush="Black">C#</Button>
+                <sn:ScintillaWPF x:Name="tbOutput" Width=" 820" Height="580" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 20"  Background="White"  IsEnabled="True"></sn:ScintillaWPF>
             </Grid>
  
     </Grid>
