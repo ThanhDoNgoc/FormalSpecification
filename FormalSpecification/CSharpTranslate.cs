@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FormalSpecification
 {
-    class Pre
+    class CSharpTranslate
     {
     }
 }

@@ -18,6 +18,8 @@ namespace FormalSpecification
         Dictionary<string, string> function_variable = new Dictionary<string, string>();
         KeyValuePair<string, string> function_result;
 
+        Dictionary<string, string> post_condition = new Dictionary<string, string>();
+
         public Provider(string class_name, string formal)
         {
             string formal1 = Regex.Replace(formal, @"\s+", string.Empty);
@@ -36,6 +38,7 @@ namespace FormalSpecification
 
             handleFunction(function);
             handlePre(pre);
+            handlePost(post);
         }
 
         void handleFunction(string function)
@@ -74,12 +77,46 @@ namespace FormalSpecification
 
         void handlePre(string pre)
         {
-            pre = "!(" + pre + ")";
-            Console.WriteLine("new pre '{0}' .", pre);
+            if (pre == "")
+                return;
+            else
+            {
+                pre = "!(" + pre + ")";
+                Console.WriteLine("new pre '{0}' .", pre);
+            }
         }
         void handlePost(string post)
-        { 
+        {
+            post = Regex.Replace(post, @"\(+", string.Empty);
+            Console.WriteLine("post '{0}'.", post);
+            post = Regex.Replace(post, @"\)+", string.Empty);
+            Console.WriteLine("post '{0}'.", post);
 
+            Regex rx_resuilt = new Regex(@"^.*?(?=&&)");
+            Regex rx_condition = new Regex(@"&&(.*)");
+
+            Match canSplit = Regex.Match(post, @"\|\|");
+            Match haveCondition = Regex.Match(post, @"&&");
+
+            if (canSplit.Success)
+            {
+                string[] splitPost = Regex.Split(post, @"\|\|");
+                foreach (string value in splitPost)
+                {
+                    Console.WriteLine("value '{0}'.", value);
+                    Console.WriteLine("resuilt '{0}'.", rx_resuilt.Match(value).Value);
+                    Console.WriteLine("condition '{0}'.", rx_condition.Match(value).Groups[1].Value);
+                    post_condition.Add(rx_condition.Match(value).Groups[1].Value, rx_resuilt.Match(value).Value);
+                }
+            }
+            else if (haveCondition.Success)
+            {
+                post_condition.Add(rx_condition.Match(post).Groups[1].Value, rx_resuilt.Match(post).Value);
+            }
+            else
+            {
+                post_condition.Add(post, "");
+            }
         }
     }
 }
