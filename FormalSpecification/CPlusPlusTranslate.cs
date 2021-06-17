@@ -11,7 +11,10 @@ namespace FormalSpecification
     class CPlusPlusTranslate
     {
         Provider provider;
-        string formatPath = "C:\\Users\\Admin\\Desktop\\FormalSpecification\\FormalSpecification\\CPPFormat.txt";
+        //string formatPath = "C:\\Users\\Admin\\Desktop\\FormalSpecification\\FormalSpecification\\" +
+        string formatName = "\\CPPFormat.txt";
+        string path = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+        string formatPath = "";
         string format;
         Dictionary<string, string> variables = new Dictionary<string, string>();
         public KeyValuePair<string, string> result;
@@ -52,6 +55,7 @@ namespace FormalSpecification
 
         public string generateCPPCode()
         {
+            formatPath = path + formatName;
             var str = File.ReadAllText(formatPath);
             format = str;
 

@@ -11,7 +11,9 @@ namespace FormalSpecification
     class CSharpTranslate
     {
         Provider provider;
-        string formatPath = "C:\\Users\\Admin\\Desktop\\FormalSpecification\\FormalSpecification\\CSharpFormat.txt";
+        string formatName = "\\CSharpFormat.txt";
+        string path = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+        string formatPath = "";
         string format;
         Dictionary<string, string> variables = new Dictionary<string, string>();
         public KeyValuePair<string, string> result;
@@ -49,6 +51,7 @@ namespace FormalSpecification
         }
         public string generateCSharpCode()
         {
+            formatPath = path + formatName;
             var str = File.ReadAllText(formatPath);
             format = str;
 

@@ -105,10 +105,12 @@ namespace FormalSpecification
                 string[] splitPost = Regex.Split(post, @"\|\|");
                 foreach (string value in splitPost)
                 {
-                    Console.WriteLine("value '{0}'.", value);
-                    Console.WriteLine("resuilt '{0}'.", rx_resuilt.Match(value).Value);
-                    Console.WriteLine("condition '{0}'.", rx_condition.Match(value).Groups[1].Value);
-                    post_condition.Add(rx_condition.Match(value).Groups[1].Value, rx_resuilt.Match(value).Value);
+                    string str = rx_condition.Match(value).Groups[1].Value;
+                    str = Regex.Replace(str, @"=", "==");
+                    str = Regex.Replace(str, @"!=", "!");
+                    str = Regex.Replace(str, @">=", ">");
+                    str = Regex.Replace(str, @"<=", "<");
+                    post_condition.Add(str, rx_resuilt.Match(value).Value);
                 }
             }
             else if (haveCondition.Success)

@@ -59,6 +59,8 @@
                 <sn:ScintillaWPF x:Name="tbInput" Width="360" Height="500" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 20" Foreground="White"></sn:ScintillaWPF>
             </Grid>
             <Grid Grid.Column="1">
+                <Button Click="btnCplusplus_Click" Width="60" Height="25" Margin="40 10" HorizontalAlignment="Left" VerticalAlignment="Top">C++</Button>
+                <Button Click="btnCsharp_Click" Width="60" Height="25" Margin="120 10" HorizontalAlignment="Left" VerticalAlignment="Top">C#</Button>
                 <sn:ScintillaWPF x:Name="tbOutput" Width=" 820" Height="580" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 20"  Background="White"  IsEnabled="True"></sn:ScintillaWPF>
             </Grid>
  

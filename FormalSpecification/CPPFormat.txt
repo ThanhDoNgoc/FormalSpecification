@@ -1,0 +1,46 @@
+﻿#include <iostream>
+
+using namespace FormalSpcification;
+
+void Nhap_@functionname(@refvariable)
+{
+	@nhap_variable
+}
+
+void Xuat_@functionname(@resulttype @resultkey)
+{
+	cout << "Ket qua la: " << @resultkey << endl;
+}
+
+int KiemTra_@functionname(@strvariable)
+{
+	@pre
+	return 1;
+}
+
+@resulttype @functionname(@strvariable)
+{
+	@resulttype @resultkey = @resultfirstvalue;
+	@condiction
+	return @resultkey;
+}
+
+int main()
+{
+	@main_variable
+	@resulttype @resultkey = @resultfirstvalue;
+
+	Nhap_@functionname(@mainrefvariable);
+
+	if(KiemTra_@functionname(@mainstrvariable) == 1)
+	{
+		@resultkey = @functionname(@mainstrvariable);
+		Xuat_@functionname(@resultkey);
+	}
+	else
+	{	
+		cout << "Thong tin nhap khong hop le" ;
+	}
+
+	system("pause");
+}
