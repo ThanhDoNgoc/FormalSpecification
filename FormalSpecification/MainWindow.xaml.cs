@@ -151,6 +151,15 @@ namespace FormalSpecification
             Match pre = Regex.Match(str, "pre");
             Match post = Regex.Match(str, "post");
 
+            string classname = tbClass.Text;
+            classname = Regex.Replace(classname, @"\s+", string.Empty);
+            if (classname == "")
+            {
+                tbClass.Text = "";
+                System.Windows.MessageBox.Show("Input Class name");
+                return;
+            }
+
             if (pre.Success && post.Success )
             {
                 Provider provider = new Provider(tbClass.Text, tbInput.Text);
@@ -170,6 +179,15 @@ namespace FormalSpecification
             str = Regex.Replace(str, @"\s+", string.Empty);
             Match pre = Regex.Match(str, "pre");
             Match post = Regex.Match(str, "post");
+
+            string classname = tbClass.Text;
+            classname = Regex.Replace(classname, @"\s+", string.Empty);
+            if (classname == "")
+            {
+                tbClass.Text = "";
+                System.Windows.MessageBox.Show("Input Class name");
+                return;
+            }
 
             if (pre.Success && post.Success)
             {
@@ -197,8 +215,12 @@ namespace FormalSpecification
             Match pre = Regex.Match(str, "pre");
             Match post = Regex.Match(str, "post");
 
-            if (tbFilename.Text == "")
+            string filename = tbFilename.Text;
+            filename = Regex.Replace(filename, @"\s+", string.Empty);
+
+            if (filename == "")
             {
+                tbFilename.Text = "";
                 System.Windows.MessageBox.Show("Input Filename");
             }
             else
