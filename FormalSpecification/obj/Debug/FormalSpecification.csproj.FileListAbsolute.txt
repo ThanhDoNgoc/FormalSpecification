@@ -24,3 +24,29 @@ C:\Users\ACER\Desktop\FormalSpecification\FormalSpecification\bin\Debug\Microsof
 C:\Users\ACER\Desktop\FormalSpecification\FormalSpecification\bin\Debug\Microsoft.Dynamic.xml
 C:\Users\ACER\Desktop\FormalSpecification\FormalSpecification\bin\Debug\Microsoft.Scripting.xml
 C:\Users\ACER\Desktop\FormalSpecification\FormalSpecification\bin\Debug\Microsoft.Scripting.Metadata.xml
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\FormalSpecification.exe.config
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\FormalSpecification.exe
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\FormalSpecification.pdb
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\Microsoft.Scripting.dll
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\Microsoft.Scripting.Metadata.dll
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\ScintillaNET.dll
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\ScintillaNET.WPF.dll
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\Microsoft.Dynamic.xml
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\Microsoft.Scripting.xml
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\Microsoft.Scripting.Metadata.xml
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\ScintillaNET.xml
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\bin\Debug\ScintillaNET.WPF.xml
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\FormalSpecification.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\MainWindow.g.cs
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\App.g.cs
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\FormalSpecification_MarkupCompile.cache
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\FormalSpecification_MarkupCompile.lref
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\MainWindow.baml
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\FormalSpecification.g.resources
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\FormalSpecification.Properties.Resources.resources
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\FormalSpecification.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\FormalSpecification.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\FormalSpecification.csproj.CopyComplete
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\FormalSpecification.exe
+C:\Users\Admin\Desktop\New folder (2)\FormalSpecification\FormalSpecification\obj\Debug\FormalSpecification.pdb

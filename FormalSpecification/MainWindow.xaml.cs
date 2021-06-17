@@ -144,15 +144,19 @@ namespace FormalSpecification
         {
             string str = tbInput.Text;
             str = Regex.Replace(str, @"\s+",string.Empty);
-            tbOutput.Text = str;
-            tbOutput.Text = "abc\tdefgh";
             Match pre = Regex.Match(str, "pre");
             Match post = Regex.Match(str, "post");
 
             if (pre.Success && post.Success )
             {
-                //tbOutput.Text = str ;
-                Provider provider = new Provider(str, tbInput.Text);
+                Provider provider = new Provider(tbClass.Text, tbInput.Text);
+                CPlusPlusTranslate cpp = new CPlusPlusTranslate();
+                cpp.CPP_transtale(provider);
+                tbOutput.Text = cpp.generateCPPCode();
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Inccorrect formal");
             }
         }
 

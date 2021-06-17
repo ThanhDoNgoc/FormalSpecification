@@ -8,21 +8,22 @@ using System.IO;
 
 namespace FormalSpecification
 {
-    class CSharpTranslate
+    class CPlusPlusTranslate
     {
         Provider provider;
-        string formatPath = "C:\\Users\\Admin\\Desktop\\FormalSpecification\\FormalSpecification\\CSharpFormat.txt";
+        string formatPath = "C:\\Users\\Admin\\Desktop\\FormalSpecification\\FormalSpecification\\CPPFormat.txt";
         string format;
         Dictionary<string, string> variables = new Dictionary<string, string>();
         public KeyValuePair<string, string> result;
 
-        public void CSharp_transtale(Provider provider1)
+        public void CPP_transtale(Provider provider1)
         {
             provider = provider1;
 
             translateVariable();
             translateResuilt();
         }
+
         void translateVariable()
         {
 
@@ -37,6 +38,7 @@ namespace FormalSpecification
                 }
             }
         }
+
         void translateResuilt()
         {
             foreach (KeyValuePair<string, string> type in variable_type)
@@ -47,7 +49,8 @@ namespace FormalSpecification
                 }
             }
         }
-        public string generateCSharpCode()
+
+        public string generateCPPCode()
         {
             var str = File.ReadAllText(formatPath);
             format = str;
@@ -67,6 +70,7 @@ namespace FormalSpecification
             format = Regex.Replace(format, @"@resultfirstvalue", resultFirstValue());
             return format;
         }
+
         string refvariable()
         {
             string str = "";
@@ -78,6 +82,7 @@ namespace FormalSpecification
             str = str.Remove(str.Length - 1);
             return str;
         }
+
         string strvariable()
         {
             string str = "";
@@ -116,7 +121,7 @@ namespace FormalSpecification
             string str = "";
             if (provider.pre != "")
             {
-                str = "if( !(" + provider.pre + ")) { return 0; }"; 
+                str = "if( !(" + provider.pre + ")) { return 0; }";
             }
             return str;
         }
@@ -125,8 +130,8 @@ namespace FormalSpecification
             string str = "";
             foreach (KeyValuePair<string, string> vari in variables)
             {
-                str = str + "\t\t\tConsole.WriteLine(\"Nhap " + vari.Key + ": \"); " +"\n";
-                str = str + "\t\t\t" + vari.Key + " = " + vari.Value + ".Parse(Console.ReadLine());\n";
+                str = str + "cout << \"Nhap " + vari.Key + ": \"; " + "\n";
+                str = str + "\t" + "cin >> " + vari.Key + ";" + "\n\t";
             }
             return str;
         }
@@ -142,19 +147,19 @@ namespace FormalSpecification
                     firstvalue = "false";
                 else if (vari.Value == "string")
                     firstvalue = "\"\"";
-                str = str + "\t\t\t"+vari.Value+" " + vari.Key +" = "+firstvalue +";\n";
+                str = str + vari.Value + " " + vari.Key + " = " + firstvalue + ";\n\t";
             }
             return str;
         }
         string strcondiction()
         {
-            string str ="";
+            string str = "";
             foreach (KeyValuePair<string, string> con in provider.post_condition)
             {
                 if (con.Key == "post")
-                    str = str + "\t\t\t" + con.Value + ";\n";
+                    str = str + "\t" + con.Value + ";\n";
                 else
-                    str = str + "\t\t\tif(" + con.Key + ") {" + con.Value + ";}\n"; 
+                    str = str + "if(" + con.Key + ") {" + con.Value + ";}\n\t";
             }
 
             return str;

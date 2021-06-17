@@ -72,6 +72,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CPlusPlusTranslate.cs" />
     <Compile Include="CSharpTranslate.cs" />
     <Compile Include="Provider.cs" />
     <Page Include="MainWindow.xaml">
