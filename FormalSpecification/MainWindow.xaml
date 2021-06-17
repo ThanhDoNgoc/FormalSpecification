@@ -55,7 +55,7 @@
                 <Label Margin="23.5 30" Width="80" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Class Name</Label>
                 <Label Margin="23.5 55" Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Exe File Name</Label>
                 <TextBox Name="tbClass" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130 35">Program</TextBox>
-                <TextBox Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130 60"></TextBox>
+                <TextBox Name="tbFilename" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130 60"></TextBox>
                 <sn:ScintillaWPF x:Name="tbInput" Width="360" Height="500" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 20" Foreground="White"></sn:ScintillaWPF>
             </Grid>
             <Grid Grid.Column="1">

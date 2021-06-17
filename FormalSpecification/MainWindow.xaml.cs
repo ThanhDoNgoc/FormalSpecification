@@ -75,7 +75,7 @@ namespace FormalSpecification
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 StreamWriter sw = new StreamWriter(File.Create(saveFileDialog.FileName));
-                sw.Write(tbInput.Text);
+                sw.Write(tbOutput.Text);
                 sw.Dispose();
             }           
         }
@@ -197,35 +197,42 @@ namespace FormalSpecification
             Match pre = Regex.Match(str, "pre");
             Match post = Regex.Match(str, "post");
 
-            if (pre.Success && post.Success)
+            if (tbFilename.Text == "")
             {
-                Provider provider = new Provider(tbClass.Text, tbInput.Text);
-                CSharpTranslate cshap = new CSharpTranslate();
-                cshap.CSharp_transtale(provider);
-                BuildText = cshap.generateCSharpCode();
-            }
-
-            CSharpCodeProvider codeProvider = new CSharpCodeProvider();
-            ICodeCompiler icc = codeProvider.CreateCompiler();
-            string Output = "Out.exe";
-
-            CompilerParameters parameters = new CompilerParameters();
-            parameters.GenerateExecutable = true;
-            parameters.OutputAssembly = Output;
-
-            CompilerResults results = icc.CompileAssemblyFromSource(parameters, BuildText);
-
-            if (results.Errors.Count > 0)
-            {
-                foreach (CompilerError error in results.Errors)
-                {
-                    Console.WriteLine(error.Line + "\t" + error.ErrorText + Environment.NewLine);
-                }
+                System.Windows.MessageBox.Show("Input Filename");
             }
             else
             {
-                Console.WriteLine("success");
-                Process.Start(Output);
+                if (pre.Success && post.Success)
+                {
+                    Provider provider = new Provider(tbClass.Text, tbInput.Text);
+                    CSharpTranslate cshap = new CSharpTranslate();
+                    cshap.CSharp_transtale(provider);
+                    BuildText = cshap.generateCSharpCode();
+                }
+
+                CSharpCodeProvider codeProvider = new CSharpCodeProvider();
+                ICodeCompiler icc = codeProvider.CreateCompiler();
+                string Output = tbFilename.Text + ".exe";
+
+                CompilerParameters parameters = new CompilerParameters();
+                parameters.GenerateExecutable = true;
+                parameters.OutputAssembly = Output;
+
+                CompilerResults results = icc.CompileAssemblyFromSource(parameters, BuildText);
+
+                if (results.Errors.Count > 0)
+                {
+                    foreach (CompilerError error in results.Errors)
+                    {
+                        Console.WriteLine(error.Line + "\t" + error.ErrorText + Environment.NewLine);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("success");
+                    Process.Start(Output);
+                }
             }
         }
     }
