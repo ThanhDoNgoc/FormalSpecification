@@ -77,14 +77,14 @@ namespace FormalSpecification
             function_result = new KeyValuePair<string, string>(rx_resuilt_name.Match(result).Value, rx_resuilt_type.Match(result).Groups[1].Value);
         }
 
-        void handlePre(string pre)
+        void handlePre(string pres)
         {
-            if (pre == "")
+            if (pres == "")
                 return;
             else
             {
-                pre = "!(" + pre + ")";
-                Console.WriteLine("new pre '{0}' .", pre);
+                pres = "!(" + pres + ")";
+                Console.WriteLine("new pre '{0}' .", pres);
             }
         }
         void handlePost(string post)

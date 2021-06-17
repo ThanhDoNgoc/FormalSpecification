@@ -11,14 +11,11 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="WhiteSmoke">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="320*"/>
-                <ColumnDefinition Width="77*"/>
-            </Grid.ColumnDefinitions>
-            <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Background="WhiteSmoke">
+        <Grid Grid.Row="0" Background="White">
+            <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Background="White">
                 <MenuItem Header="File">
                     <MenuItem x:Name="New" Header="New" Click="New_Click" ></MenuItem>
                     <MenuItem x:Name="Open" Header="Open" Click="Open_Click" ></MenuItem>
@@ -27,7 +24,28 @@
                 </MenuItem>
             </Menu>
         </Grid>
-        <Grid Grid.Row="1" Background="LightGray">
+        <Grid Grid.Row="1" Background="WhiteSmoke">
+            <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Background="WhiteSmoke">
+                <MenuItem x:Name="menuNew" Click="New_Click" Background="WhiteSmoke" Height="25" Width="25">
+                    <MenuItem.Icon>
+                        <Image Source="icon/new_icon.png" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuOpen" Click="Open_Click" Background="WhiteSmoke" Height="25" Width="25">
+                    <MenuItem.Icon>
+                        <Image Source="icon/open icon.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuSave" Click="Save_Click" Background="WhiteSmoke" Height="25" Width="25">
+                    <MenuItem.Icon>
+                        <Image Source="icon/save icon.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="cplusplus" Click="btnCplusplus_Click" Header="C++"></MenuItem>
+                <MenuItem x:Name="csharp" Click="btnCsharp_Click" Header="C#"></MenuItem>
+            </Menu>
+        </Grid>
+        <Grid Grid.Row="2" Background="LightGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400"></ColumnDefinition>
             <ColumnDefinition Width="880"></ColumnDefinition>
@@ -40,9 +58,7 @@
                 <TextBox Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130 60"></TextBox>
                 <sn:ScintillaWPF x:Name="tbInput" Width="360" Height="500" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 20" Foreground="White"></sn:ScintillaWPF>
             </Grid>
-        <Grid Grid.Column="1">
-                <Button x:Name="btnCplusplus" Click="btnCplusplus_Click" Width="60" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60 20" BorderThickness="1" BorderBrush="Black"> C++</Button>
-                <Button x:Name="btnCsharp" Click="btnCsharp_Click" Width="60" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140 20" BorderThickness="1" BorderBrush="Black">C#</Button>
+            <Grid Grid.Column="1">
                 <sn:ScintillaWPF x:Name="tbOutput" Width=" 820" Height="580" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 20"  Background="White"  IsEnabled="True"></sn:ScintillaWPF>
             </Grid>
  
