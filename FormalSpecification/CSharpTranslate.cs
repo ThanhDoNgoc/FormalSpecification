@@ -152,9 +152,9 @@ namespace FormalSpecification
             foreach (KeyValuePair<string, string> con in provider.post_condition)
             {
                 if (con.Key == "post")
-                    str = str + "\t\t\t" + con.Value + ";\n";
+                    str = str + "\t\t\t" + con.Value.ToLower() + ";\n";
                 else
-                    str = str + "\t\t\tif(" + con.Key + ") {" + con.Value + ";}\n"; 
+                    str = str + "\t\t\tif(" + con.Key + ") {" + con.Value.ToLower() + ";}\n"; 
             }
 
             return str;

@@ -51,7 +51,7 @@
             <ColumnDefinition Width="880"></ColumnDefinition>
         </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Button x:Name="bntBuildSolution" Height="30" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="30, 42.5" BorderThickness="1" BorderBrush="Black">Build Solution</Button>
+                <Button x:Name="bntBuildSolution" Click="bntBuildSolution_Click" Height="30" Width="100" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="30, 42.5" BorderThickness="1" BorderBrush="Black">Build Solution</Button>
                 <Label Margin="23.5 30" Width="80" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Class Name</Label>
                 <Label Margin="23.5 55" Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">Exe File Name</Label>
                 <TextBox Name="tbClass" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130 35">Program</TextBox>

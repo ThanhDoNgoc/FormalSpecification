@@ -19,6 +19,9 @@ using ScintillaNET;
 using ScintillaNET.WPF;
 using System.Text.RegularExpressions;
 using System.Drawing;
+using System.CodeDom.Compiler;
+using System.Diagnostics;
+using Microsoft.CSharp;
 
 
 namespace FormalSpecification
@@ -183,6 +186,32 @@ namespace FormalSpecification
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void bntBuildSolution_Click(object sender, RoutedEventArgs e)
+        {
+            CSharpCodeProvider codeProvider = new CSharpCodeProvider();
+            ICodeCompiler icc = codeProvider.CreateCompiler();
+            string Output = "Out.exe";
+
+            CompilerParameters parameters = new CompilerParameters();
+            parameters.GenerateExecutable = true;
+            parameters.OutputAssembly = Output;
+
+            CompilerResults results = icc.CompileAssemblyFromSource(parameters, tbOutput.Text);
+
+            if (results.Errors.Count > 0)
+            {
+                foreach (CompilerError error in results.Errors)
+                {
+                    Console.WriteLine(error.Line + "\t" + error.ErrorText + Environment.NewLine);
+                }
+            }
+            else
+            {
+                Console.WriteLine("success");
+                Process.Start(Output);
+            }
         }
     }
 }
