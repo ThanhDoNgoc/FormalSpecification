@@ -191,6 +191,20 @@ namespace FormalSpecification
 
         private void bntBuildSolution_Click(object sender, RoutedEventArgs e)
         {
+            string BuildText = "";
+            string str = tbInput.Text;
+            str = Regex.Replace(str, @"\s+", string.Empty);
+            Match pre = Regex.Match(str, "pre");
+            Match post = Regex.Match(str, "post");
+
+            if (pre.Success && post.Success)
+            {
+                Provider provider = new Provider(tbClass.Text, tbInput.Text);
+                CSharpTranslate cshap = new CSharpTranslate();
+                cshap.CSharp_transtale(provider);
+                BuildText = cshap.generateCSharpCode();
+            }
+
             CSharpCodeProvider codeProvider = new CSharpCodeProvider();
             ICodeCompiler icc = codeProvider.CreateCompiler();
             string Output = "Out.exe";
@@ -199,7 +213,7 @@ namespace FormalSpecification
             parameters.GenerateExecutable = true;
             parameters.OutputAssembly = Output;
 
-            CompilerResults results = icc.CompileAssemblyFromSource(parameters, tbOutput.Text);
+            CompilerResults results = icc.CompileAssemblyFromSource(parameters, BuildText);
 
             if (results.Errors.Count > 0)
             {

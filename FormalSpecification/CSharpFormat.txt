@@ -21,7 +21,7 @@ namespace FormalSpecification
 
 		public @resulttype @functionname(@strvariable)
 		{
-			@resulttype @resultkey = 0;
+			@resulttype @resultkey = @resultfirstvalue;
 @condiction
 			return @resultkey;
 		}
